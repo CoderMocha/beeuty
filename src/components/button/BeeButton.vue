@@ -71,6 +71,10 @@ export default {
     padding: 0 18px;
   }
   &.type-normal{
+    background-color: #FFCC1C;
+    color: #002B00;
+  }
+  &.type-primary{
 
   }
   &.type-info{
