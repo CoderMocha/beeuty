@@ -1,6 +1,4 @@
 <script>
-import {isUndefined} from "lodash";
-
 export default {
   name: "BeeButtonGroup",
   props: {

@@ -1,15 +1,13 @@
-import BeeButton from "./components/button/button.vue";
-import BeeButtonGroup from './components/button-group/button-group.vue';
+import BeeButton from "./components/button";
 
-const components = [
+const components = {
   BeeButton,
-  BeeButtonGroup,
-  // ...如果还有的话继续添加
-];
+  BeeButtonGroup: BeeButton.Group,
+};
 
 const install = function(Vue, opts = {}) {
-  components.map(component => {
-    Vue.component(component.name, component);
+  Object.keys(components).map(componentKey => {
+    Vue.component(components[componentKey].name, components[componentKey]);
   });
 }
 
@@ -21,6 +19,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   BeeButton,
-  BeeButtonGroup,
+  BeeButtonGroup: BeeButton.Group,
   // ...如果还有的话继续添加
 }
