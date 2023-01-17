@@ -1,0 +1,12 @@
+@keyframes bee-ani-rotate {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.loading-animate{
+  animation: bee-ani-rotate 2s infinite linear;
+}

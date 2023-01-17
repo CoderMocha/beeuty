@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <bee-button>TEST</bee-button>
+    <Button />
   </div>
 </template>
 
 <script>
-import BeeButton from "./components/button/BeeButton.vue";
+import Button from "./views/Button.vue";
+
 export default {
   name: 'app',
-  components: {
-    BeeButton
-  },
+  components: {Button},
   data () {
     return {}
   }

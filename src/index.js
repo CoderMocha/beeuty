@@ -1,7 +1,9 @@
-import BeeButton from "./components/button/BeeButton.vue";
+import BeeButton from "./components/button/button.vue";
+import BeeButtonGroup from './components/button-group/button-group.vue';
 
 const components = [
   BeeButton,
+  BeeButtonGroup,
   // ...如果还有的话继续添加
 ];
 
@@ -19,5 +21,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   BeeButton,
+  BeeButtonGroup,
   // ...如果还有的话继续添加
 }

@@ -1,7 +1,7 @@
-import BeeButton from "./BeeButton.vue";
+import button from "./button.vue";
 
-BeeButton.install = Vue => {
-  Vue.component(BeeButton.name, BeeButton);
+button.install = Vue => {
+  Vue.component(button.name, button);
 }
 
-export default BeeButton;
+export default button;

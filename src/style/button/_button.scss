@@ -1,0 +1,189 @@
+@use "sass:math";
+@use "sass:color";
+
+$btn-prefix-cls: '#{$css-prefix}button';
+$btn-grp-prefix-cls: '#{$css-prefix}button-group';
+
+@mixin button-size($height, $font-size, $padding-x, $min-width, $border-radius) {
+  height: $height;
+  font-size: $font-size;
+  padding: 0 $padding-x;
+  min-width: $min-width;
+  border-radius: $border-radius;
+  &.round {
+    border-radius: math.div($height, 2);
+  }
+
+  &.loading {
+    .loading-wrap{
+      width: $font-size + 8px;
+      height: $font-size;
+    }
+  }
+}
+
+@mixin button-color($background, $border, $color: $bee__inverse) {
+  background-color: $background;
+  border: 1px solid $border;
+  color: $color;
+  &:hover {
+    background-color: color.adjust($background, $lightness: 10%);
+  }
+  &.plain {
+    background-color: color.adjust($background, $alpha: -0.9);
+    border: 1px $border solid;
+    color: $background;
+
+    &:hover {
+      background-color: $background;
+      color: $bee__inverse;
+    }
+  }
+  &.ghost,
+  &.dashed {
+    background-color: transparent;
+    border: 1px $border solid;
+    color: $background;
+
+    &:hover {
+      background-color: color.adjust($background, $alpha: -0.9);
+    }
+  }
+  &.dashed {
+    border: 1px $border dashed;
+  }
+  &.disabled {
+    background-color: #f7f7f7;
+    border-color: #d7dde4;
+    cursor: not-allowed;
+    color: #c3cbd6;
+  }
+  &.loading {
+    background-color: color.adjust($background, $lightness: 10%);
+  }
+}
+
+.#{$btn-prefix-cls} {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  user-select: none;
+  transition: .15s ease;
+
+  & + & {
+    margin-left: 6px;
+  }
+
+  &.loading {
+    cursor: wait;
+  }
+
+  .loading-wrap{
+    display: flex;
+    width: 0;
+    transition: .15s ease;
+    overflow: hidden;
+    .icon-loading{
+      @extend .loading-animate;
+    }
+  }
+
+  @at-root #{unify-selector(&, &-size-tiny)} {
+    @include button-size(
+        $bee__size_tiny,
+        $bee__font_size_tiny,
+        12px,
+        56px,
+        2px);
+  }
+
+  &-size-small {
+    @include button-size(
+        $bee__size_small,
+        $bee__font_size_small,
+        14px,
+        64px,
+        2px);
+  }
+
+  &-size-medium {
+    @include button-size(
+        $bee__size_medium,
+        $bee__font_size_medium,
+        16px,
+        72px,
+        4px);
+  }
+
+  &-size-large {
+    @include button-size(
+        $bee__size_large,
+        $bee__font_size_large,
+        18px,
+        80px,
+        4px);
+  }
+
+  &-type-normal {
+    @include button-color(
+        $bee__white,
+        #999,
+        $bee__black);
+  }
+
+  &-type-primary {
+    @include button-color(
+        $bee__yellow,
+        $bee__yellow,
+        $bee__blackish_green);
+  }
+
+  &-type-info {
+    @include button-color(
+        $bee__blue,
+        $bee__blue);
+  }
+
+  &-type-success {
+    @include button-color(
+        $bee__green,
+        $bee__green);
+  }
+
+  &-type-warning {
+    @include button-color(
+        $bee__orange,
+        $bee__orange);
+  }
+
+  &-type-danger {
+    @include button-color(
+        $bee__red,
+        $bee__red);
+  }
+}
+
+.#{$btn-grp-prefix-cls} {
+  display: inline-flex;
+  background-color: white;
+
+  .bee__button {
+    margin-left: 1px;
+
+    &:first-child {
+      border-top-right-radius: unset;
+      border-bottom-right-radius: unset;
+    }
+
+    &:last-child {
+      border-top-left-radius: unset;
+      border-bottom-left-radius: unset;
+    }
+
+    &:not(&:first-child):not(&:last-child) {
+      border-radius: unset;
+    }
+  }
+}

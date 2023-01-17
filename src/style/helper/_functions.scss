@@ -1,0 +1,14 @@
+// 去除空格，主要用于类名处理
+// string-remove-whitespace
+@function string-remove-whitespace($string) {
+  @while (str-index($string, ' ') != null) {
+    $index: str-index($string, ' ');
+    $string: #{str-slice($string, 0, $index - 1)}#{str-slice($string, $index + 1)};
+  }
+  @return $string;
+}
+
+// 组合类名
+@function unify-selector($selectorA, $selectorB) {
+  @return #{string-remove-whitespace(#{$selectorA$selectorB})}
+}
