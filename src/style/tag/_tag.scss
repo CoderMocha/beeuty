@@ -1,0 +1,100 @@
+$btn-prefix-cls: '#{$css-prefix}tag';
+
+@mixin tag-color($border, $background, $color) {
+  border: 1px solid $border;
+  background-color: $background;
+  color: $color;
+}
+
+.#{$btn-prefix-cls} {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  & + & {
+    margin-left: 8px;
+  }
+
+  .button-close{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+    border-radius: 2px;
+    &:hover{
+      background-color: #666666;
+    }
+  }
+
+  &.closeable{
+
+  }
+
+  &-size-tiny {
+    height: 20px;
+    font-size: 12px;
+    padding: 0 6px;
+    border-radius: 2px;
+  }
+  &-size-small {
+    height: 22px;
+    font-size: 14px;
+    padding: 0 6px;
+    border-radius: 2px;
+  }
+  &-size-medium {
+    height: 24px;
+    font-size: 14px;
+    padding: 0 6px;
+    border-radius: 2px;
+  }
+  &-size-large {
+    height: 28px;
+    font-size: 16px;
+    padding: 0 6px;
+    border-radius: 2px;
+  }
+
+  &-type-normal {
+    border: 1px solid $bee__black;
+  }
+
+  &-type-primary {
+    @include tag-color(
+        $bee__yellow,
+        transparent,
+        $bee__yellow);
+  }
+
+  &-type-info {
+    @include tag-color(
+        $bee__blue,
+        transparent,
+        $bee__blue);
+  }
+
+  &-type-success {
+    @include tag-color(
+        $bee__green,
+        transparent,
+        $bee__green);
+  }
+
+  &-type-warning {
+    @include tag-color(
+        $bee__orange,
+        transparent,
+        $bee__orange);
+  }
+
+  &-type-error {
+    @include tag-color(
+        $bee__red,
+        transparent,
+        $bee__red);
+  }
+}

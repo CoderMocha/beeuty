@@ -1,8 +1,21 @@
+import BeeAvatar from "./components/avatar";
 import BeeButton from "./components/button";
+import BeeCard from "./components/card";
+import BeeDivider from "./components/divider";
+import BeeIcon from "./components/icon";
+import BeeTag from "./components/tag";
+import BeeTabs from "./components/tabs";
 
 const components = {
+  BeeAvatar,
   BeeButton,
   BeeButtonGroup: BeeButton.Group,
+  BeeCard,
+  BeeDivider,
+  BeeIcon,
+  BeeTag,
+  BeeTabs,
+  BeeTabsPane: BeeTabs.Pane,
 };
 
 const install = function(Vue, opts = {}) {
@@ -18,7 +31,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  BeeButton,
-  BeeButtonGroup: BeeButton.Group,
+  ...components,
   // ...如果还有的话继续添加
 }

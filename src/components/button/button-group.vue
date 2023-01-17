@@ -1,17 +1,10 @@
 <script>
+import {basicProps} from "../../mixins/props.mixin";
+
 export default {
   name: "BeeButtonGroup",
+  mixins: [basicProps],
   props: {
-    // 尺寸
-    size: {
-      type: String,
-      default: 'medium',
-    },
-    // 类型
-    type: {
-      type: String,
-      default: 'normal',
-    },
     // 幽灵
     ghost: {
       type: Boolean,

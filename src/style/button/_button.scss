@@ -158,7 +158,7 @@ $btn-grp-prefix-cls: '#{$css-prefix}button-group';
         $bee__orange);
   }
 
-  &-type-danger {
+  &-type-error {
     @include button-color(
         $bee__red,
         $bee__red);

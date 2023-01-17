@@ -1,22 +1,28 @@
 <template>
   <div id="app">
     <nav>
-      <div class="item" v-for="item in navigation.list">{{ item.symbol }}</div>
+      <div class="item" v-for="(item, index) in navigation.list"
+      @click="navigation.currentIndex = index">{{ item.symbol }}</div>
     </nav>
     <main>
       <component :is="currentComp"/>
     </main>
-<!--    <Button />-->
   </div>
 </template>
 
 <script>
 import Button from "./views/Button.vue";
+import Tag from "./views/Tag.vue";
+import Card from "./views/Card.vue";
+import Tabs from "./views/Tabs.vue";
 
 export default {
   name: 'app',
   components: {
     Button,
+    Tag,
+    Card,
+    Tabs,
   },
   data () {
     return {
@@ -25,7 +31,16 @@ export default {
         list: [
           {
             symbol: 'Button',
-          }
+          },
+          {
+            symbol: 'Tag',
+          },
+          {
+            symbol: 'Card',
+          },
+          {
+            symbol: 'Tabs',
+          },
         ]
       }
     }

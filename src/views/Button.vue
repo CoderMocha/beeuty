@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h2>Buttons</h2>
+  <h2>Button</h2>
   <div>
     <h3>Size</h3>
     <div>
@@ -17,7 +17,7 @@
       <bee-button type="info">信息</bee-button>
       <bee-button type="success">成功</bee-button>
       <bee-button type="warning">警告</bee-button>
-      <bee-button type="danger">危险</bee-button>
+      <bee-button type="error">错误</bee-button>
     </div>
   </div>
   <div>
