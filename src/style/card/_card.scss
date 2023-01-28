@@ -2,6 +2,22 @@ $card-prefix-cls: '#{$css-prefix}card';
 
 .#{$card-prefix-cls} {
   border: 1px solid #333;
-  padding: 20px;
+  padding: 16px;
+  border-radius: 4px;
+  &-head{
+    padding-bottom: 16px;
+    display: flex;
+    align-items: center;
+    .title{
+      font-size: 22px;
+      font-weight: bold;
+      flex: 1;
+      margin: 0;
+    }
+    .extra{
 
+    }
+  }
+  &-content{
+  }
 }

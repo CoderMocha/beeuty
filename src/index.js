@@ -5,6 +5,8 @@ import BeeDivider from "./components/divider";
 import BeeIcon from "./components/icon";
 import BeeTag from "./components/tag";
 import BeeTabs from "./components/tabs";
+import BeeCol from "./components/col";
+import BeeRow from "./components/row";
 
 const components = {
   BeeAvatar,
@@ -16,6 +18,8 @@ const components = {
   BeeTag,
   BeeTabs,
   BeeTabsPane: BeeTabs.Pane,
+  BeeCol,
+  BeeRow,
 };
 
 const install = function(Vue, opts = {}) {

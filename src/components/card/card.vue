@@ -1,7 +1,14 @@
 <template>
 <div class="bee__card">
-  <slot name="title">{{ title }}</slot>
-  <div class="content">
+  <div class="bee__card-head">
+    <h3 class="title">
+      <slot name="title">{{ title }}</slot>
+    </h3>
+    <div class="extra">
+      <slot name="extra"></slot>
+    </div>
+  </div>
+  <div class="bee__card-content">
     <slot></slot>
   </div>
 </div>
