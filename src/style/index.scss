@@ -1,7 +1,11 @@
 @import "animation/animation";
 @import "params/params";
 @import "helper/functions";
-@import "button/button";
-@import "tag/tag";
-@import "card/card";
-@import "layout/layout";
+
+@import "components/avatar";
+@import "components/badge";
+@import "components/button";
+@import "components/card";
+@import "components/layout";
+@import "components/space";
+@import "components/tag";

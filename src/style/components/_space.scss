@@ -1,0 +1,9 @@
+$space-prefix-cls: '#{$css-prefix}space';
+
+.#{$space-prefix-cls} {
+  display: inline-flex;
+
+  &-align-center{
+    align-items: center;
+  }
+}

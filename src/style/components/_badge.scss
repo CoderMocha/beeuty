@@ -1,0 +1,54 @@
+$badge-prefix-cls: '#{$css-prefix}badge';
+
+.#{$badge-prefix-cls} {
+  position: relative;
+  display: inline-block;
+
+  &-value {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    font-size: 14px;
+    color: #FFFFFF;
+    height: 24px;
+    min-width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(calc(100% - 12px), -12px);
+    border-radius: 12px;
+    padding: 0 6px;
+    box-sizing: border-box;
+  }
+
+  &-type-default {
+    .#{$badge-prefix-cls}-value {
+      background-color: $bee__red;
+    }
+  }
+
+  &-type-info {
+    .#{$badge-prefix-cls}-value {
+      background-color: $bee__blue;
+    }
+  }
+
+  &-type-warning {
+    .#{$badge-prefix-cls}-value {
+      background-color: $bee__orange;
+    }
+  }
+
+  @at-root #{unify-selector(&, &-dot)} {
+    .#{$badge-prefix-cls}-value {
+      min-width: 16px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      transform: translate(50%, -50%);
+      font-size: 0;
+    }
+  }
+}

@@ -72,10 +72,6 @@ $btn-grp-prefix-cls: '#{$css-prefix}button-group';
   user-select: none;
   transition: .15s ease;
 
-  & + & {
-    margin-left: 6px;
-  }
-
   &.loading {
     cursor: wait;
   }

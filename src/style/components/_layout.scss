@@ -1,0 +1,22 @@
+@use "sass:math";
+
+$row-prefix-cls: '#{$css-prefix}row';
+$col-prefix-cls: '#{$css-prefix}col';
+
+@mixin colSpan($span) {
+  flex: 0 0 math.div($span, 24) * 100%;
+  max-width: math.div($span, 24) * 100%;
+}
+
+.#{$row-prefix-cls} {
+  display: flex;
+  .#{$col-prefix-cls} {
+    @for $i from 1 through 24 {
+      &-span-#{$i} {
+        @include colSpan($i);
+        -webkit-box-flex: 0;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
