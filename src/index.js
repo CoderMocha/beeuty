@@ -3,11 +3,14 @@ import BeeBadge from './components/badge';
 import BeeButton from './components/button';
 import BeeCard from './components/card';
 import BeeDivider from './components/divider';
+import BeeForm from './components/form';
+import BeeInput from './components/input';
 import BeeIcon from './components/icon';
 import BeeTag from './components/tag';
 import BeeTabs from './components/tabs';
 import BeeCol from './components/col';
 import BeeRow from './components/row';
+import BeeRadio from './components/radio';
 import BeeSpace from './components/space';
 
 const components = {
@@ -17,12 +20,17 @@ const components = {
 	BeeButtonGroup: BeeButton.Group,
 	BeeCard,
 	BeeDivider,
+	BeeForm,
+	BeeFormItem: BeeForm.Item,
+	BeeInput,
 	BeeIcon,
 	BeeTag,
 	BeeTabs,
 	BeeTabsPane: BeeTabs.Pane,
 	BeeCol,
 	BeeRow,
+	BeeRadio,
+	BeeRadioGroup: BeeRadio.Group,
 	BeeSpace,
 };
 

@@ -22,6 +22,7 @@ import Badge from './views/Badge.vue';
 import Button from './views/Button.vue';
 import Tag from './views/Tag.vue';
 import Card from './views/Card.vue';
+import Form from './views/Form.vue';
 import Tabs from './views/Tabs.vue';
 
 export default {
@@ -32,6 +33,7 @@ export default {
 		Button,
 		Tag,
 		Card,
+		Form,
 		Tabs,
 	},
 	data() {
@@ -53,6 +55,9 @@ export default {
 					},
 					{
 						symbol: 'Card',
+					},
+					{
+						symbol: 'Form',
 					},
 					{
 						symbol: 'Tabs',
