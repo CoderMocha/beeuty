@@ -25,6 +25,8 @@ import Card from './views/Card.vue';
 import Form from './views/Form.vue';
 import Tooltip from './views/Tooltip.vue';
 import Tabs from './views/Tabs.vue';
+import Divider from './views/Divider.vue';
+import Typography from './views/Typography.vue';
 
 export default {
 	name: 'app',
@@ -37,6 +39,8 @@ export default {
 		Form,
 		Tooltip,
 		Tabs,
+		Divider,
+		Typography,
 	},
 	data() {
 		return {
@@ -66,6 +70,12 @@ export default {
 					},
 					{
 						symbol: 'Tabs',
+					},
+					{
+						symbol: 'Divider',
+					},
+					{
+						symbol: 'Typography',
 					},
 				],
 			},

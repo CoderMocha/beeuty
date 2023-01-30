@@ -1,0 +1,18 @@
+.bee__text{
+  font-size: inherit;
+  @at-root #{unify-selector(&, &-type-default)} {
+    color: inherit;
+  }
+  @at-root #{unify-selector(&, &-type-success)} {
+    color: $bee__green;
+  }
+  @at-root #{unify-selector(&, &-type-info)} {
+    color: $bee__blue;
+  }
+  @at-root #{unify-selector(&, &-type-warning)} {
+    color: $bee__orange;
+  }
+  @at-root #{unify-selector(&, &-type-error)} {
+    color: $bee__red;
+  }
+}

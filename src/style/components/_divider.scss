@@ -1,0 +1,57 @@
+$divider-prefix-cls: '#{$css-prefix}divider';
+
+.#{$divider-prefix-cls} {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &:before,
+  &:after{
+    flex: 1;
+    content: '';
+    display: block;
+    height: 0;
+    border-top: 1px solid #333333;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-vertical{
+    width: 0;
+    height: 100%;
+    @at-root &-title{
+      display: none;
+    }
+    &:after{
+      display: none;
+    }
+    &:before{
+      border-left: 1px solid #333333;
+    }
+  }
+
+  &-dashed{
+    &:before,
+    &:after{
+      border-top-style: dashed;
+    }
+  }
+
+  &-title-left{
+    &:before{
+      flex: 0 0 24px;
+    }
+  }
+
+  &-title-right{
+    &:after{
+      flex: 0 0 24px;
+    }
+  }
+
+  &-title{
+    padding: 0 12px;
+    font-size: 16px;
+    color: #333333;
+  }
+}

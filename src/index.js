@@ -17,6 +17,7 @@ import BeeCol from './components/col';
 import BeeRow from './components/row';
 import BeeRadio from './components/radio';
 import BeeSpace from './components/space';
+import BeeText from './components/text';
 
 const components = {
 	BeeAvatar,
@@ -44,6 +45,7 @@ const components = {
 	BeeRadio,
 	BeeRadioGroup: BeeRadio.Group,
 	BeeSpace,
+	BeeText,
 };
 
 const install = function(Vue, opts = {}) {
