@@ -1,9 +1,7 @@
-import Tag from "./tag.vue";
-// import ButtonGroup from "./button-group.vue";
-// Button.Group = ButtonGroup
+import BeeTag from './tag.vue';
 
-Tag.install = Vue => {
-  Vue.component(Tag.name, Tag);
-}
+BeeTag.install = (Vue) => {
+	Vue.component(BeeTag.name, BeeTag);
+};
 
-export default Tag;
+export default BeeTag;

@@ -23,6 +23,7 @@ import Button from './views/Button.vue';
 import Tag from './views/Tag.vue';
 import Card from './views/Card.vue';
 import Form from './views/Form.vue';
+import Tooltip from './views/Tooltip.vue';
 import Tabs from './views/Tabs.vue';
 
 export default {
@@ -34,6 +35,7 @@ export default {
 		Tag,
 		Card,
 		Form,
+		Tooltip,
 		Tabs,
 	},
 	data() {
@@ -51,13 +53,16 @@ export default {
 						symbol: 'Button',
 					},
 					{
-						symbol: 'Tag',
-					},
-					{
 						symbol: 'Card',
 					},
 					{
 						symbol: 'Form',
+					},
+					{
+						symbol: 'Tag',
+					},
+					{
+						symbol: 'Tooltip',
 					},
 					{
 						symbol: 'Tabs',

@@ -4,7 +4,7 @@
 		<bee-row :gutter="16">
 			<bee-col :span="12">
 				<bee-card title="type">
-					<bee-space align="center" gap="32">
+					<bee-space align="center" :gap="32">
 						<bee-badge :value="49">
 							<bee-button type="info" plain>评论</bee-button>
 						</bee-badge>
@@ -17,7 +17,7 @@
 					</bee-space>
 				</bee-card>
 				<bee-card title="Value">
-					<bee-space align="center" gap="32">
+					<bee-space align="center" :gap="32">
 						<bee-badge :value="169">
 							<bee-button type="info" plain>评论</bee-button>
 						</bee-badge>

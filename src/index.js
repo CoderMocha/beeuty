@@ -6,8 +6,9 @@ import BeeDivider from './components/divider';
 import BeeForm from './components/form';
 import BeeInput from './components/input';
 import BeeIcon from './components/icon';
-import BeeTag from './components/tag';
 import BeeTabs from './components/tabs';
+import BeeTag from './components/tag';
+import BeeTooltip from './components/tooltip';
 import BeeCol from './components/col';
 import BeeRow from './components/row';
 import BeeRadio from './components/radio';
@@ -24,8 +25,9 @@ const components = {
 	BeeFormItem: BeeForm.Item,
 	BeeInput,
 	BeeIcon,
-	BeeTag,
 	BeeTabs,
+	BeeTag,
+	BeeTooltip,
 	BeeTabsPane: BeeTabs.Pane,
 	BeeCol,
 	BeeRow,

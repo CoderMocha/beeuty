@@ -1,0 +1,36 @@
+$tooltip-prefix-cls: '#{$css-prefix}tooltip';
+
+.#{$tooltip-prefix-cls} {
+  position: relative;
+  display: inline-block;
+
+  &-content {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background-color: #002B00;
+    color: white;
+    white-space: nowrap;
+    padding: 10px;
+  }
+}
+
+.pop-enter-active {
+  animation: pop-in .25s;
+}
+
+.pop-leave-active {
+  animation: pop-in .25s reverse;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -75%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%);
+  }
+}
