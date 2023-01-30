@@ -3,12 +3,16 @@ import BeeBadge from './components/badge';
 import BeeButton from './components/button';
 import BeeCard from './components/card';
 import BeeDivider from './components/divider';
+import BeeDrawer from './components/drawer';
+import BeeDropdown from './components/dropdown';
 import BeeForm from './components/form';
 import BeeInput from './components/input';
+import BeePagination from './components/pagination';
 import BeeIcon from './components/icon';
 import BeeTabs from './components/tabs';
 import BeeTag from './components/tag';
 import BeeTooltip from './components/tooltip';
+import BeeTree from './components/tree';
 import BeeCol from './components/col';
 import BeeRow from './components/row';
 import BeeRadio from './components/radio';
@@ -21,13 +25,19 @@ const components = {
 	BeeButtonGroup: BeeButton.Group,
 	BeeCard,
 	BeeDivider,
+	BeeDrawer,
+	BeeDropdown,
+	BeeDropdownMenu: BeeDropdown.Menu,
+	BeeDropdownItem: BeeDropdown.Item,
 	BeeForm,
 	BeeFormItem: BeeForm.Item,
 	BeeInput,
+	BeePagination,
 	BeeIcon,
 	BeeTabs,
 	BeeTag,
 	BeeTooltip,
+	BeeTree,
 	BeeTabsPane: BeeTabs.Pane,
 	BeeCol,
 	BeeRow,

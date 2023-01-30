@@ -12,11 +12,26 @@
 </template>
 
 <script>
+import { flattenDeep } from 'lodash';
+
 const prefixCls = 'bee__tooltip';
+const positions = ['top', 'left', 'right', 'bottom'];
+const validateArray = flattenDeep(
+	positions.map((pos) => {
+		return [pos, `${pos}-start`, 'pos-end'];
+	}),
+);
+
 export default {
 	name: 'BeeTooltip',
 	props: {
 		content: String,
+		placement: {
+			validate(value) {
+				return validateArray.includes(value);
+			},
+			default: 'top',
+		},
 	},
 	data() {
 		return {
