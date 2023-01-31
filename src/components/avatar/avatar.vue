@@ -48,15 +48,29 @@ export default {
 	},
 	computed: {
 		classes() {
-			return [prefixCls, `${prefixCls}-shape-${this.shape}`, `${prefixCls}-size-${this.size}`];
+			return [
+				prefixCls,
+				`${prefixCls}-shape-${this.shape}`,
+				{
+					[`${prefixCls}-size-${this.size}`]: !!this.size && isString(this.size),
+				},
+			];
 		},
 		styles() {
+			let sizeStyle = {};
+			if (isNumber(this.size)) {
+				sizeStyle = {
+					width: `${this.size}px`,
+					height: `${this.size}px`,
+				};
+			}
 			const textStyles = {
 				backgroundColor: this.bgColor,
 				color: this.altColor,
 			};
 			return {
 				...textStyles,
+				...sizeStyle,
 			};
 		},
 		finalAlt() {

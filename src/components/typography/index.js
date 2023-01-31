@@ -1,2 +1,4 @@
 import BeeText from '../text';
-export { BeeText };
+import BeeHeading from '../heading';
+
+export { BeeText, BeeHeading };

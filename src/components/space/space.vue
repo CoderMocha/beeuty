@@ -18,6 +18,8 @@ export default {
 				return ['start', 'end', 'center', 'baseline', 'stretch'].includes(value);
 			},
 		},
+		vertical: Boolean,
+		inline: Boolean,
 	},
 	computed: {
 		classes() {
@@ -25,6 +27,8 @@ export default {
 				prefixCls,
 				{
 					[`${prefixCls}-align-${this.align}`]: !!this.align,
+					[`${prefixCls}-vertical`]: this.vertical,
+					[`${prefixCls}-inline`]: this.inline,
 				},
 			];
 		},

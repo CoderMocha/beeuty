@@ -5,7 +5,9 @@ export const basicProps = {
 			validate(value) {
 				return ['tiny', 'small', 'medium', 'large'].includes(value);
 			},
-			default: 'medium',
+			default() {
+				return !this.$BEE.size || this.$BEE.size === '' ? 'medium' : this.$BEE.size;
+			},
 		},
 		// 类型
 		type: {

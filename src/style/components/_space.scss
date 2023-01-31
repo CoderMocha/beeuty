@@ -1,9 +1,21 @@
 $space-prefix-cls: '#{$css-prefix}space';
 
 .#{$space-prefix-cls} {
-  display: inline-flex;
+  display: flex;
 
-  &-align-center{
-    align-items: center;
+  @at-root #{unify-selector(&, &-vertical)} {
+    flex-direction: column;
   }
+
+  @at-root #{unify-selector(&, &-inline)} {
+    display: inline-flex;
+  }
+
+  @each $item in $bee__aligns {
+    $align-cls: &-align-#{$item};
+    @at-root #{unify-selector(&, $align-cls)} {
+      align-items: $item;
+    }
+  }
+
 }

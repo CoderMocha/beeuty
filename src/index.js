@@ -17,7 +17,7 @@ import BeeCol from './components/col';
 import BeeRow from './components/row';
 import BeeRadio from './components/radio';
 import BeeSpace from './components/space';
-import BeeText from './components/text';
+import { BeeText, BeeHeading } from './components/typography';
 
 const components = {
 	BeeAvatar,
@@ -46,12 +46,17 @@ const components = {
 	BeeRadioGroup: BeeRadio.Group,
 	BeeSpace,
 	BeeText,
+	BeeHeading,
 };
 
 const install = function(Vue, opts = {}) {
 	Object.keys(components).map((componentKey) => {
 		Vue.component(components[componentKey].name, components[componentKey]);
 	});
+
+	Vue.prototype.$BEE = {
+		size: opts.size || '',
+	};
 };
 
 /* 支持使用标签的方式引入 */
