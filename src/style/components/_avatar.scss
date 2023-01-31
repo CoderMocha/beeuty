@@ -1,5 +1,11 @@
 $avatar-prefix-cls: '#{$css-prefix}avatar';
 
+@mixin avatar-size($size, $fontSize) {
+  width: $size;
+  height: $size;
+  font-size: $fontSize;
+}
+
 .#{$avatar-prefix-cls} {
   display: flex;
   align-items: center;
@@ -13,26 +19,18 @@ $avatar-prefix-cls: '#{$css-prefix}avatar';
   }
 
   &-size-tiny {
-    width: 48px;
-    height: 48px;
-    font-size: 14px;
+    @include avatar-size(32px, 12px);
   }
 
   &-size-small {
-    width: 64px;
-    height: 64px;
-    font-size: 16px;
+    @include avatar-size(40px, 14px);
   }
 
   &-size-medium {
-    width: 80px;
-    height: 80px;
-    font-size: 20px;
+    @include avatar-size(48px, 16px);
   }
 
   &-size-large {
-    width: 96px;
-    height: 96px;
-    font-size: 24px;
+    @include avatar-size(56px, 18px);
   }
 }

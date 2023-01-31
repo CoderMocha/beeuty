@@ -3,6 +3,7 @@ import BeeAvatar from './components/avatar';
 import BeeBadge from './components/badge';
 import BeeButton from './components/button';
 import BeeCard from './components/card';
+import BeeCollapse from './components/collapse';
 import BeeDivider from './components/divider';
 import BeeDrawer from './components/drawer';
 import BeeDropdown from './components/dropdown';
@@ -27,6 +28,8 @@ const components = {
 	BeeButton,
 	BeeButtonGroup: BeeButton.Group,
 	BeeCard,
+	BeeCollapse,
+	BeeCollapseItem: BeeCollapse.Item,
 	BeeDivider,
 	BeeDrawer,
 	BeeDropdown,

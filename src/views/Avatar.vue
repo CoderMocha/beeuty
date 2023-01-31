@@ -10,7 +10,7 @@
 							<bee-avatar></bee-avatar>
 							<bee-avatar size="small"></bee-avatar>
 							<bee-avatar size="tiny"></bee-avatar>
-							<bee-avatar :size="48" alt="48px" all-alt></bee-avatar>
+							<bee-avatar :size="64" alt="64px" all-alt></bee-avatar>
 						</bee-space>
 					</bee-card>
 					<bee-card title="Alt">
