@@ -1,24 +1,27 @@
 <template>
-	<div class="bee__alert">
-		<div v-if="bordered" class="bee__alert-border"></div>
-		<button v-if="closeable" class="bee__alert-close"></button>
-		<div class="bee__alert-icon"></div>
-		<div class="bee__alert-body">
-			<div class="bee__alert-title">{{ title }}</div>
-			<div class="bee__alert-content"><slot></slot></div>
+	<transition name="alert">
+		<div v-if="!closed" :class="classes">
+			<div v-if="bordered" class="bee__alert-border"></div>
+			<button v-if="closeable" class="bee__alert-close" @click="close"></button>
+			<div :class="[`${prefixCls}-icon`]"></div>
+			<div :class="[`${prefixCls}-body`]">
+				<div :class="[`${prefixCls}-title`]">{{ title }}</div>
+				<div :class="[`${prefixCls}-content`]"><slot></slot></div>
+			</div>
 		</div>
-	</div>
+	</transition>
 </template>
 
 <script>
 const prefixCls = 'bee__alert';
 export default {
-	name: 'alert',
+	name: 'BeeAlert',
 	props: {
 		type: {
 			validate(value) {
 				return ['default', 'success', 'info', 'warning', 'error'].includes(value);
 			},
+			default: 'default',
 		},
 		title: String,
 		closeable: Boolean,
@@ -27,9 +30,25 @@ export default {
 			default: true,
 		},
 	},
+	data() {
+		return {
+			prefixCls,
+			closed: false,
+		};
+	},
 	computed: {
 		classes() {
-			return [prefixCls, `${prefixCls}-type-${this.type}`];
+			return [
+				prefixCls,
+				`${prefixCls}-type-${this.type}`,
+				{ [`${prefixCls}-bordered`]: this.bordered },
+			];
+		},
+	},
+	methods: {
+		close() {
+			this.closed = true;
+			this.$emit('close');
 		},
 	},
 };

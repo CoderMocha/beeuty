@@ -4,6 +4,7 @@ $card-prefix-cls: '#{$css-prefix}card';
   padding: 16px;
   border-radius: 4px;
   box-sizing: border-box;
+
   &-bordered{
     border: 1px solid rgba(213, 218, 230, 0.6);
   }

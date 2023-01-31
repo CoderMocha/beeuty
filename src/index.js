@@ -1,3 +1,4 @@
+import BeeAlert from './components/alert';
 import BeeAvatar from './components/avatar';
 import BeeBadge from './components/badge';
 import BeeButton from './components/button';
@@ -20,6 +21,7 @@ import BeeSpace from './components/space';
 import { BeeText, BeeHeading } from './components/typography';
 
 const components = {
+	BeeAlert,
 	BeeAvatar,
 	BeeBadge,
 	BeeButton,

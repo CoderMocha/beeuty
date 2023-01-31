@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import Alert from './views/Alert.vue';
 import Avatar from './views/Avatar.vue';
 import Badge from './views/Badge.vue';
 import Button from './views/Button.vue';
@@ -31,6 +32,7 @@ import Typography from './views/Typography.vue';
 export default {
 	name: 'app',
 	components: {
+		Alert,
 		Avatar,
 		Badge,
 		Button,
@@ -47,6 +49,9 @@ export default {
 			navigation: {
 				currentIndex: 0,
 				list: [
+					{
+						symbol: 'Alert',
+					},
 					{
 						symbol: 'Avatar',
 					},

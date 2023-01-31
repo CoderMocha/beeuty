@@ -1,0 +1,76 @@
+@use "sass:color";
+
+$alert-prefix-cls: '#{$css-prefix}alert';
+
+@keyframes alert-in {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 1000px;
+    opacity: 1;
+  }
+}
+.alert-enter-active {
+  animation: alert-in .5s;
+}
+.alert-leave-active {
+  animation: alert-in .5s reverse;
+}
+
+.#{$alert-prefix-cls} {
+  padding: 8px 16px;
+  border-radius: 4px;
+  position: relative;
+
+  &-title{
+    font-size: $bee__font_size_large;
+    font-weight: 500;
+  }
+
+  &-content{
+    font-size: $bee__font_size_small;
+  }
+
+  &-border{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 1px solid var(--bd-color);
+    box-sizing: border-box;
+    border-radius: inherit;
+  }
+
+  &-close{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  @at-root #{unify-selector(&, &-type-default)} {
+    background-color: rgb(250, 250, 252);
+    --bd-color: rgb(239, 239, 245);
+  }
+  @at-root #{unify-selector(&, &-type-success)} {
+    background-color: color.adjust($bee__green, $alpha: -0.85);
+    --bd-color: #{color.adjust($bee__green, $alpha: -0.5)};
+  }
+  @at-root #{unify-selector(&, &-type-info)} {
+    background-color: color.adjust($bee__blue, $alpha: -0.85);
+    --bd-color: #{color.adjust($bee__blue, $alpha: -0.5)};
+  }
+  @at-root #{unify-selector(&, &-type-warning)} {
+    background-color: color.adjust($bee__orange, $alpha: -0.85);
+    --bd-color: #{color.adjust($bee__orange, $alpha: -0.5)};
+  }
+  @at-root #{unify-selector(&, &-type-error)} {
+    background-color: color.adjust($bee__red, $alpha: -0.85);
+    --bd-color: #{color.adjust($bee__red, $alpha: -0.5)};
+  }
+}
