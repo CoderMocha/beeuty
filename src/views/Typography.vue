@@ -11,6 +11,13 @@
 					<bee-text type="error">失败</bee-text>
 				</bee-card>
 			</bee-col>
+			<bee-col :span="12">
+				<bee-card title="Headings">
+					<bee-h1 type="success">Heading level 1</bee-h1>
+					<bee-h2 type="success">Heading level 2</bee-h2>
+					<bee-h3 type="success">Heading level 3</bee-h3>
+				</bee-card>
+			</bee-col>
 		</bee-row>
 	</div>
 </template>

@@ -1,12 +1,4 @@
-<template>
-	<span :class="classes"><slot></slot></span>
-</template>
-
-<script>
-const prefixCls = 'bee__text';
-
-export default {
-	name: 'BeeText',
+export const typographyMixin = {
 	props: {
 		type: {
 			validate(value) {
@@ -18,7 +10,7 @@ export default {
 	computed: {
 		classes() {
 			return [
-				prefixCls,
+				this.prefixCls,
 				{
 					[`bee__text-color-${this.type}`]: !!this.type,
 				},
@@ -26,4 +18,3 @@ export default {
 		},
 	},
 };
-</script>

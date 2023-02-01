@@ -1,18 +1,35 @@
-.bee__text{
+.bee__text-color-default {
+  color: inherit;
+}
+
+.bee__text-color-success {
+  color: $bee__green;
+}
+
+.bee__text-color-info {
+  color: $bee__blue;
+}
+
+.bee__text-color-warning {
+  color: $bee__orange;
+}
+
+.bee__text-color-error {
+  color: $bee__red;
+}
+
+.bee__text {
   font-size: inherit;
-  @at-root #{unify-selector(&, &-type-default)} {
-    color: inherit;
-  }
-  @at-root #{unify-selector(&, &-type-success)} {
-    color: $bee__green;
-  }
-  @at-root #{unify-selector(&, &-type-info)} {
-    color: $bee__blue;
-  }
-  @at-root #{unify-selector(&, &-type-warning)} {
-    color: $bee__orange;
-  }
-  @at-root #{unify-selector(&, &-type-error)} {
-    color: $bee__red;
-  }
+}
+
+.bee__h1 {
+  font-size: 30px;
+}
+
+.bee__h2 {
+  font-size: 22px;
+}
+
+.bee__h3 {
+  font-size: 18px;
 }

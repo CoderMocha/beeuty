@@ -19,7 +19,7 @@ import BeeCol from './components/col';
 import BeeRow from './components/row';
 import BeeRadio from './components/radio';
 import BeeSpace from './components/space';
-import { BeeText, BeeHeading } from './components/typography';
+import { BeeText, BeeH1, BeeH2, BeeH3 } from './components/typography';
 
 const components = {
 	BeeAlert,
@@ -51,7 +51,9 @@ const components = {
 	BeeRadioGroup: BeeRadio.Group,
 	BeeSpace,
 	BeeText,
-	BeeHeading,
+	BeeH1,
+	BeeH2,
+	BeeH3,
 };
 
 const install = function(Vue, opts = {}) {
