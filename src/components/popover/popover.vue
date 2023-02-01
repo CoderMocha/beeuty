@@ -4,8 +4,15 @@
 			<slot></slot>
 		</div>
 		<transition name="pop">
-			<div v-show="visible" :class="[`${prefixCls}-content`]">
-				<slot name="content">{{ content }}</slot>
+			<div v-if="visible" class="popover">
+				<slot name="popover">
+					<div class="popover-title">
+						<slot name="popover-title">{{ title }}</slot>
+					</div>
+					<div class="popover-content">
+						<slot name="popover-content">{{ content }}</slot>
+					</div>
+				</slot>
 			</div>
 		</transition>
 	</div>
@@ -14,12 +21,12 @@
 <script>
 import { popMixin } from '../../mixins/popup.mixin';
 
-const prefixCls = 'bee__tooltip';
-
+const prefixCls = 'bee__popover';
 export default {
-	name: 'BeeTooltip',
+	name: 'BeePopover',
 	mixins: [popMixin],
 	props: {
+		title: String,
 		content: String,
 	},
 	data() {

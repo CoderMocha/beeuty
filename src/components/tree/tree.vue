@@ -3,8 +3,9 @@
 		<bee-tree-node
 			v-for="(node, nodeIndex) in data"
 			:key="`node-${nodeIndex}`"
-			:node-index="`${nodeIndex}`"
 			:node="node"
+			:node-index="`${nodeIndex}`"
+			:parent-level="0"
 			@nodeClick="handleNodeClick(node)"
 		/>
 	</div>

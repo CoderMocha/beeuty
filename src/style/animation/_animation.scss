@@ -10,3 +10,26 @@
 .loading-animate{
   animation: bee-ani-rotate 2s infinite linear;
 }
+
+.pop-enter-active {
+  animation: pop-in .25s;
+}
+
+.pop-leave-active {
+  animation: pop-in .25s reverse;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.collapse-transition {
+  transition: .2s height ease-in-out,
+    .2s padding-top ease-in-out,
+    .2s padding-bottom ease-in-out;
+}

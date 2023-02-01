@@ -28,10 +28,14 @@ import Tooltip from './views/Tooltip.vue';
 import Tabs from './views/Tabs.vue';
 import Divider from './views/Divider.vue';
 import Typography from './views/Typography.vue';
+import Popover from './views/Popover.vue';
+import Tree from './views/Tree.vue';
+import Collapse from './views/Collapse.vue';
 
 export default {
 	name: 'app',
 	components: {
+		Collapse,
 		Alert,
 		Avatar,
 		Badge,
@@ -43,12 +47,23 @@ export default {
 		Tabs,
 		Divider,
 		Typography,
+		Popover,
+		Tree,
 	},
 	data() {
 		return {
 			navigation: {
 				currentIndex: 0,
 				list: [
+					{
+						symbol: 'Collapse',
+					},
+					{
+						symbol: 'Tree',
+					},
+					{
+						symbol: 'Popover',
+					},
 					{
 						symbol: 'Alert',
 					},

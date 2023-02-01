@@ -1,0 +1,14 @@
+$tree-prefix-cls: '#{$css-prefix}tree';
+
+.#{$tree-prefix-cls} {
+  &-node{
+    .info{
+      display: flex;
+      align-items: center;
+      .expand-icon{
+        margin-right: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+}

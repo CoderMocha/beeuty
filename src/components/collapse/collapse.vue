@@ -8,6 +8,9 @@
 const prefixCls = 'bee__collapse';
 export default {
 	name: 'BeeCollapse',
+	props: {
+		accordion: Boolean,
+	},
 	computed: {
 		classes() {
 			return [prefixCls];

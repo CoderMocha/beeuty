@@ -19,6 +19,7 @@ import BeeCol from './components/col';
 import BeeRow from './components/row';
 import BeeRadio from './components/radio';
 import BeeSpace from './components/space';
+import BeePopover from './components/popover';
 import { BeeText, BeeH1, BeeH2, BeeH3 } from './components/typography';
 
 const components = {
@@ -50,6 +51,7 @@ const components = {
 	BeeRadio,
 	BeeRadioGroup: BeeRadio.Group,
 	BeeSpace,
+	BeePopover,
 	BeeText,
 	BeeH1,
 	BeeH2,

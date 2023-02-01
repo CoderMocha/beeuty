@@ -15,20 +15,3 @@ $tooltip-prefix-cls: '#{$css-prefix}tooltip';
     padding: 10px;
   }
 }
-
-.pop-enter-active {
-  animation: pop-in .25s;
-}
-
-.pop-leave-active {
-  animation: pop-in .25s reverse;
-}
-
-@keyframes pop-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
