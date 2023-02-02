@@ -1,7 +1,22 @@
 @use "sass:math";
 
+$layout-prefix-cls: '#{$css-prefix}layout';
+
 $row-prefix-cls: '#{$css-prefix}row';
 $col-prefix-cls: '#{$css-prefix}col';
+
+.#{$layout-prefix-cls} {
+  display: flex;
+  height: 100%;
+  @at-root #{unify-selector(&, &-vertical)} {
+    flex-direction: column;
+  }
+}
+.bee__aside{
+}
+.bee__content{
+  flex: 1;
+}
 
 @mixin colSpan($span) {
   flex: 0 0 math.div($span, 24) * 100%;

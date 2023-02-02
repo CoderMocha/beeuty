@@ -1,0 +1,8 @@
+$breadcrumb-prefix-cls: '#{$css-prefix}breadcrumb';
+
+.#{$breadcrumb-prefix-cls} {
+  display: flex;
+  &-item{
+    display: flex;
+  }
+}

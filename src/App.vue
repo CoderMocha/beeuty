@@ -1,22 +1,49 @@
 <template>
 	<div id="app">
-		<nav>
-			<div
-				class="item"
-				v-for="(item, index) in navigation.list"
-				:key="index"
-				@click="navigation.currentIndex = index"
-			>
-				{{ item.symbol }}
-			</div>
-		</nav>
-		<main>
-			<component :is="currentComp" />
-		</main>
+		<bee-layout class="doc-container">
+			<bee-header class="doc-header">
+				<div class="logo">
+					<img src="./assets/logo.svg" alt="" />
+					<div class="logo-text">
+						<span class="bee">Bee</span>
+						<span class="ui">UI</span>
+					</div>
+				</div>
+			</bee-header>
+			<bee-content>
+				<bee-layout>
+					<bee-aside :width="200">
+						<bee-menu>
+							<bee-menu-item>菜单</bee-menu-item>
+							<bee-menu-group title="分组">
+								<bee-menu-item>菜单</bee-menu-item>
+								<bee-menu-item>菜单</bee-menu-item>
+							</bee-menu-group>
+							<bee-submenu> </bee-submenu>
+						</bee-menu>
+						<nav>
+							<div
+								class="item"
+								v-for="(item, index) in navigation.list"
+								:key="index"
+								@click="navigation.currentIndex = index"
+							>
+								{{ item.symbol }}
+							</div>
+						</nav>
+					</bee-aside>
+					<bee-content class="main">
+						<component :is="currentComp" />
+					</bee-content>
+				</bee-layout>
+			</bee-content>
+			<bee-footer></bee-footer>
+		</bee-layout>
 	</div>
 </template>
 
 <script>
+import Breadcrumb from './views/Breadcrumb.vue';
 import Alert from './views/Alert.vue';
 import Avatar from './views/Avatar.vue';
 import Badge from './views/Badge.vue';
@@ -35,6 +62,7 @@ import Collapse from './views/Collapse.vue';
 export default {
 	name: 'app',
 	components: {
+		Breadcrumb,
 		Collapse,
 		Alert,
 		Avatar,
@@ -55,6 +83,9 @@ export default {
 			navigation: {
 				currentIndex: 0,
 				list: [
+					{
+						symbol: 'Breadcrumb',
+					},
 					{
 						symbol: 'Collapse',
 					},
@@ -110,19 +141,42 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-	//display: flex;
+.doc-container {
+	height: 100vh;
+	.doc-header {
+		height: 80px;
+		display: flex;
+		align-items: center;
+		padding: 0 24px;
+		.logo {
+			display: flex;
+			img {
+				width: 40px;
+				margin-right: 16px;
+			}
+			.logo-text {
+				display: flex;
+				font-size: 36px;
+				.bee {
+					font-weight: bold;
+					color: #ffcc1c;
+				}
+				.ui {
+					font-weight: normal;
+					color: #002b00;
+				}
+			}
+		}
+	}
 	nav {
-		position: fixed;
-		width: 200px;
-		height: 100vh;
+		width: 280px;
+		height: 100%;
 		overflow: auto;
 		border-right: 1px #333 solid;
 		background-color: white;
-		box-sizing: border-box;
 	}
-	main {
-		padding: 20px 20px 20px 220px;
+	.main {
+		padding: 20px;
 	}
 }
 </style>

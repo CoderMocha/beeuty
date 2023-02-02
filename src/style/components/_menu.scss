@@ -1,0 +1,20 @@
+@use "sass:color";
+$menu-prefix-cls: '#{$css-prefix}menu';
+$menu-item-prefix-cls: '#{$css-prefix}menu-item';
+$menu-group-prefix-cls: '#{$css-prefix}menu-group';
+
+.#{$menu-prefix-cls} {
+  .#{$menu-item-prefix-cls}{
+    cursor: pointer;
+    height: 40px;
+    &:hover{
+      background-color: color.adjust($bee__blue, $alpha: -0.8);
+    }
+  }
+  .#{$menu-group-prefix-cls} {
+    .title{
+      color: #c9c9c9;
+      font-size: 14px;
+    }
+  }
+}

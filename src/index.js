@@ -1,6 +1,7 @@
 import BeeAlert from './components/alert';
 import BeeAvatar from './components/avatar';
 import BeeBadge from './components/badge';
+import BeeBreadcrumb from './components/breadcrumb';
 import BeeButton from './components/button';
 import BeeCard from './components/card';
 import BeeCollapse from './components/collapse';
@@ -20,12 +21,16 @@ import BeeRow from './components/row';
 import BeeRadio from './components/radio';
 import BeeSpace from './components/space';
 import BeePopover from './components/popover';
+import BeeLayout from './components/layout';
+import BeeMenu from './components/menu';
 import { BeeText, BeeH1, BeeH2, BeeH3 } from './components/typography';
 
 const components = {
 	BeeAlert,
 	BeeAvatar,
 	BeeBadge,
+	BeeBreadcrumb,
+	BeeBreadcrumbItem: BeeBreadcrumb.Item,
 	BeeButton,
 	BeeButtonGroup: BeeButton.Group,
 	BeeCard,
@@ -56,6 +61,15 @@ const components = {
 	BeeH1,
 	BeeH2,
 	BeeH3,
+	BeeMenu,
+	BeeSubmenu: BeeMenu.Submenu,
+	BeeMenuItem: BeeMenu.Item,
+	BeeMenuGroup: BeeMenu.Group,
+	BeeLayout,
+	BeeHeader: BeeLayout.Header,
+	BeeFooter: BeeLayout.Footer,
+	BeeContent: BeeLayout.Content,
+	BeeAside: BeeLayout.Aside,
 };
 
 const install = function(Vue, opts = {}) {
