@@ -1,6 +1,6 @@
 import BeeCollapse from './collapse.vue';
-import BeeCollapseItem from './collapse-item.vue';
-BeeCollapse.Item = BeeCollapseItem;
+import BeeCollapsePane from './collapse-pane.vue';
+BeeCollapse.Pane = BeeCollapsePane;
 
 BeeCollapse.install = (Vue) => {
 	Vue.component(BeeCollapse.name, BeeCollapse);

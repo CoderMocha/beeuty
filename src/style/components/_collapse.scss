@@ -1,5 +1,21 @@
 $collapse-prefix-cls: '#{$css-prefix}collapse';
 
 .#{$collapse-prefix-cls} {
-
+  &-pane{
+    border-top: 1px solid rgba(213, 218, 230, 0.6);
+    &:first-child{
+      border-top: unset;
+    }
+    &-header{
+      cursor: pointer;
+      padding: 8px 0;
+      .title{
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    &-content{
+      padding: 8px 0;
+    }
+  }
 }

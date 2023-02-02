@@ -30,7 +30,7 @@ const components = {
 	BeeButtonGroup: BeeButton.Group,
 	BeeCard,
 	BeeCollapse,
-	BeeCollapseItem: BeeCollapse.Item,
+	BeeCollapsePane: BeeCollapse.Pane,
 	BeeDivider,
 	BeeDrawer,
 	BeeDropdown,
