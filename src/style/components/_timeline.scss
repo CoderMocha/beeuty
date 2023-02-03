@@ -1,0 +1,54 @@
+$timeline-prefix-cls: '#{$css-prefix}timeline';
+
+.#{$timeline-prefix-cls} {
+  display: flex;
+
+  &-mode-vertical{
+    flex-direction: column;
+    .bee__timeline-item{
+      display: flex;
+      padding-bottom: 16px;
+      .bee__timeline-item-adorn{
+        position: relative;
+        .bee__timeline-item-adorn-tail{
+          position: absolute;
+          @include size(1px, calc(100% + 16px));
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          background-color: #333333;
+        }
+        .bee__timeline-item-adorn-dot{
+          @include circle(20px);
+          background-color: #333333;
+          left: 50%;
+          top: 0;
+        }
+      }
+    }
+  }
+  &-mode-horizontal{
+    flex-direction: row;
+    .bee__timeline-item{
+      display: flex;
+      flex-direction: column;
+      padding-right: 16px;
+      .bee__timeline-item-adorn{
+        position: relative;
+        .bee__timeline-item-adorn-tail{
+          position: absolute;
+          @include size(calc(100% + 16px), 1px);
+          top: 50%;
+          background-color: #333333;
+        }
+        .bee__timeline-item-adorn-dot{
+          @include circle(20px);
+          background-color: #333333;
+          left: 50%;
+          top: 0;
+        }
+      }
+    }
+  }
+
+}

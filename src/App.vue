@@ -12,14 +12,35 @@
 			</bee-header>
 			<bee-content>
 				<bee-layout>
-					<bee-aside :width="200">
+					<bee-aside class="aside" :width="200">
 						<bee-menu>
-							<bee-menu-item>菜单</bee-menu-item>
-							<bee-menu-group title="分组">
-								<bee-menu-item>菜单</bee-menu-item>
-								<bee-menu-item>菜单</bee-menu-item>
-							</bee-menu-group>
-							<bee-submenu> </bee-submenu>
+							<template v-for="(item, index) in navigation.list">
+								<bee-menu-group v-if="item.children" :title="item.title">
+									<bee-menu-item
+										v-for="(child, childIndex) in item.children"
+										:key="childIndex"
+										@click="currentComp = child.symbol"
+										>{{ child.symbol }} {{ child.title }}</bee-menu-item
+									>
+								</bee-menu-group>
+								<bee-menu-item v-else :key="index" @click="currentComp = item.symbol">{{
+									item.symbol
+								}}</bee-menu-item>
+							</template>
+							<!--							<bee-menu-group title="分组">-->
+							<!--								<bee-menu-item>菜单</bee-menu-item>-->
+							<!--								<bee-menu-item>菜单</bee-menu-item>-->
+							<!--							</bee-menu-group>-->
+							<!--							<bee-submenu>-->
+							<!--								<bee-menu-item slot="title">菜单</bee-menu-item>-->
+							<!--								<bee-menu-item>子菜单</bee-menu-item>-->
+							<!--								<bee-menu-item>子菜单</bee-menu-item>-->
+							<!--								<bee-menu-item>子菜单</bee-menu-item>-->
+							<!--								<bee-menu-group title="分组">-->
+							<!--									<bee-menu-item>菜单</bee-menu-item>-->
+							<!--									<bee-menu-item>菜单</bee-menu-item>-->
+							<!--								</bee-menu-group>-->
+							<!--							</bee-submenu>-->
 						</bee-menu>
 						<nav>
 							<div
@@ -58,6 +79,8 @@ import Typography from './views/Typography.vue';
 import Popover from './views/Popover.vue';
 import Tree from './views/Tree.vue';
 import Collapse from './views/Collapse.vue';
+import Menu from './views/Menu.vue';
+import Timeline from './views/Timeline.vue';
 
 export default {
 	name: 'app',
@@ -77,65 +100,115 @@ export default {
 		Typography,
 		Popover,
 		Tree,
+		Menu,
+		Timeline,
 	},
 	data() {
 		return {
+			currentComp: 'Timeline',
 			navigation: {
 				currentIndex: 0,
 				list: [
 					{
-						symbol: 'Breadcrumb',
+						title: 'Basic',
+						children: [
+							{
+								title: '布局',
+								symbol: 'Layout',
+							},
+							{
+								title: '头像',
+								symbol: 'Avatar',
+							},
+							{
+								title: '按钮',
+								symbol: 'Button',
+							},
+							{
+								title: '卡片',
+								symbol: 'Card',
+							},
+							{
+								title: '折叠面板',
+								symbol: 'Collapse',
+							},
+							{
+								title: '分割线',
+								symbol: 'Divider',
+							},
+							{
+								title: '排印',
+								symbol: 'Typography',
+							},
+						],
 					},
 					{
-						symbol: 'Collapse',
+						title: 'Form',
+						children: [
+							{
+								title: '表单',
+								symbol: 'Form',
+							},
+						],
 					},
 					{
-						symbol: 'Tree',
+						title: 'Data',
+						children: [
+							{
+								title: '标签',
+								symbol: 'Tag',
+							},
+							{
+								title: '树',
+								symbol: 'Tree',
+							},
+							{
+								title: '时间轴',
+								symbol: 'Timeline',
+							},
+						],
 					},
 					{
-						symbol: 'Popover',
+						title: 'Feedback',
+						children: [
+							{
+								title: '警告',
+								symbol: 'Alert',
+							},
+							{
+								title: '警告',
+								symbol: 'Badge',
+							},
+							{
+								title: '弹出信息',
+								symbol: 'Popover',
+							},
+							{
+								title: '弹出提示',
+								symbol: 'Tooltip',
+							},
+						],
 					},
 					{
-						symbol: 'Alert',
-					},
-					{
-						symbol: 'Avatar',
-					},
-					{
-						symbol: 'Badge',
-					},
-					{
-						symbol: 'Button',
-					},
-					{
-						symbol: 'Card',
-					},
-					{
-						symbol: 'Form',
-					},
-					{
-						symbol: 'Tag',
-					},
-					{
-						symbol: 'Tooltip',
-					},
-					{
-						symbol: 'Tabs',
-					},
-					{
-						symbol: 'Divider',
-					},
-					{
-						symbol: 'Typography',
+						title: 'Navigation',
+						children: [
+							{
+								title: '面包屑',
+								symbol: 'Breadcrumb',
+							},
+							{
+								title: '标签页',
+								symbol: 'Tabs',
+							},
+							{
+								title: '菜单',
+								symbol: 'Menu',
+							},
+						],
 					},
 				],
 			},
 		};
-	},
-	computed: {
-		currentComp() {
-			return this.navigation.list[this.navigation.currentIndex].symbol;
-		},
 	},
 };
 </script>
@@ -168,12 +241,9 @@ export default {
 			}
 		}
 	}
-	nav {
+	.aside {
 		width: 280px;
 		height: 100%;
-		overflow: auto;
-		border-right: 1px #333 solid;
-		background-color: white;
 	}
 	.main {
 		padding: 20px;

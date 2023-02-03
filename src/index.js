@@ -23,6 +23,7 @@ import BeeSpace from './components/space';
 import BeePopover from './components/popover';
 import BeeLayout from './components/layout';
 import BeeMenu from './components/menu';
+import BeeTimeline from './components/timeline';
 import { BeeText, BeeH1, BeeH2, BeeH3 } from './components/typography';
 
 const components = {
@@ -70,6 +71,8 @@ const components = {
 	BeeFooter: BeeLayout.Footer,
 	BeeContent: BeeLayout.Content,
 	BeeAside: BeeLayout.Aside,
+	BeeTimeline,
+	BeeTimelineItem: BeeTimeline.Item,
 };
 
 const install = function(Vue, opts = {}) {
