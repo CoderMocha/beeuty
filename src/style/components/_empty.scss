@@ -1,0 +1,9 @@
+$empty-prefix-cls: '#{$css-prefix}empty';
+
+.#{$empty-prefix-cls} {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  width: 100%;
+}

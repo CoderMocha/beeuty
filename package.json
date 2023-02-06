@@ -1,13 +1,24 @@
 {
-  "name": "bee-ui",
+  "name": "beeuty",
+  "version": "0.1.0",
   "description": "A Vue.js project",
-  "version": "1.0.0",
   "author": "CoderMocha <codermocha@gmail.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "keywords": [
+    "beeuty",
+    "vue",
+    "vue.js",
+    "component",
+    "components",
+    "ui",
+    "framework"
+  ],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --config build/webpack.dev.js",
+    "build": "npm run build:style && npm run build:prod",
+    "build:style": "gulp --gulpfile build/dist-style.js",
+    "build:prod": "webpack --config build/webpack.prod.js"
   },
   "dependencies": {
     "lodash": "^4.17.21",
@@ -23,14 +34,24 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
+    "compression-webpack-plugin": "1.1.12",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "html-webpack-plugin": "3.0.6",
     "sass": "^1.56.0",
     "sass-loader": "^7.3.1",
+    "uglifyjs-webpack-plugin": "1.3.0",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^5.8.0"
   }
 }

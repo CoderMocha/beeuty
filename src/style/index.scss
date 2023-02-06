@@ -1,8 +1,8 @@
 @import "common/normalize";
 @import "common/reset";
 
-@import "animation/animation";
 @import "params/params";
+@import "animation/animation";
 @import "helper/functions";
 @import "helper/mixins";
 
@@ -16,6 +16,7 @@
 @import "components/layout";
 @import "components/space";
 @import "components/menu";
+@import "components/tabs";
 @import "components/tag";
 @import "components/tooltip";
 @import "components/popover";
@@ -23,3 +24,4 @@
 @import "components/typography";
 @import "components/tree";
 @import "components/timeline";
+@import "components/empty";

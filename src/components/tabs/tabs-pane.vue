@@ -1,13 +1,24 @@
 <template>
-<div class="bee__tabs-pane"></div>
+<div v-show="currentShow" :class="classes"><slot></slot></div>
 </template>
 
 <script>
+const prefixCls = 'bee__tabs-pane';
 export default {
-  name: "BeeTabsPane"
+  name: "BeeTabsPane",
+  props: {
+    name: String,
+    label: String,
+  },
+  data() {
+    return {
+      currentShow: false,
+    }
+  },
+  computed: {
+    classes() {
+      return [prefixCls];
+    }
+  }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

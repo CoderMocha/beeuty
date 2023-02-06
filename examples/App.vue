@@ -3,7 +3,7 @@
 		<bee-layout class="doc-container">
 			<bee-header class="doc-header">
 				<div class="logo">
-					<img src="./assets/logo.svg" alt="" />
+					<img src="../assets/logo.svg" alt="" />
 					<div class="logo-text">
 						<span class="bee">Bee</span>
 						<span class="ui">uty</span>
@@ -69,6 +69,7 @@ import Collapse from './views/Collapse.vue';
 import Menu from './views/Menu.vue';
 import Timeline from './views/Timeline.vue';
 import Count from './views/Count.vue';
+import Empty from './views/Empty.vue';
 
 export default {
 	name: 'app',
@@ -91,10 +92,11 @@ export default {
 		Tree,
 		Menu,
 		Timeline,
+    Empty,
 	},
 	data() {
 		return {
-			currentComp: 'Count',
+			currentComp: 'Empty',
 			navigation: {
 				currentIndex: 0,
 				list: [
@@ -179,6 +181,10 @@ export default {
 							{
 								title: '弹出提示',
 								symbol: 'Tooltip',
+							},
+							{
+								title: '空状态',
+								symbol: 'Empty',
 							},
 						],
 					},

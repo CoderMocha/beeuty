@@ -9,6 +9,7 @@ import BeeCount from './components/count';
 import BeeDivider from './components/divider';
 import BeeDrawer from './components/drawer';
 import BeeDropdown from './components/dropdown';
+import BeeEmpty from './components/empty';
 import BeeForm from './components/form';
 import BeeInput from './components/input';
 import BeePagination from './components/pagination';
@@ -44,6 +45,7 @@ const components = {
 	BeeDropdown,
 	BeeDropdownMenu: BeeDropdown.Menu,
 	BeeDropdownItem: BeeDropdown.Item,
+  BeeEmpty,
 	BeeForm,
 	BeeFormItem: BeeForm.Item,
 	BeeInput,

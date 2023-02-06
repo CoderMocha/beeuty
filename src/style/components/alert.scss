@@ -1,4 +1,6 @@
 @use "sass:color";
+@import "../helper/functions";
+@import "../params/params";
 
 $alert-prefix-cls: '#{$css-prefix}alert';
 
