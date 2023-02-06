@@ -7,13 +7,17 @@ const prefixCls = 'bee__menu-item';
 
 export default {
 	name: 'BeeMenuItem',
-	props: {},
+	props: {
+    active: Boolean,
+  },
 	data() {
 		return {};
 	},
 	computed: {
 		classes() {
-			return [prefixCls];
+			return [prefixCls, {
+        [`${prefixCls}-active`]: this.active,
+      }];
 		},
 	},
 };

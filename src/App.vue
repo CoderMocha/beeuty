@@ -6,7 +6,7 @@
 					<img src="./assets/logo.svg" alt="" />
 					<div class="logo-text">
 						<span class="bee">Bee</span>
-						<span class="ui">UI</span>
+						<span class="ui">uty</span>
 					</div>
 				</div>
 			</bee-header>
@@ -19,6 +19,7 @@
 									<bee-menu-item
 										v-for="(child, childIndex) in item.children"
 										:key="childIndex"
+                    :active="child.symbol === currentComp"
 										@click="currentComp = child.symbol"
 										>{{ child.symbol }} {{ child.title }}</bee-menu-item
 									>
@@ -27,20 +28,6 @@
 									item.symbol
 								}}</bee-menu-item>
 							</template>
-							<!--							<bee-menu-group title="分组">-->
-							<!--								<bee-menu-item>菜单</bee-menu-item>-->
-							<!--								<bee-menu-item>菜单</bee-menu-item>-->
-							<!--							</bee-menu-group>-->
-							<!--							<bee-submenu>-->
-							<!--								<bee-menu-item slot="title">菜单</bee-menu-item>-->
-							<!--								<bee-menu-item>子菜单</bee-menu-item>-->
-							<!--								<bee-menu-item>子菜单</bee-menu-item>-->
-							<!--								<bee-menu-item>子菜单</bee-menu-item>-->
-							<!--								<bee-menu-group title="分组">-->
-							<!--									<bee-menu-item>菜单</bee-menu-item>-->
-							<!--									<bee-menu-item>菜单</bee-menu-item>-->
-							<!--								</bee-menu-group>-->
-							<!--							</bee-submenu>-->
 						</bee-menu>
 						<nav>
 							<div

@@ -7,14 +7,27 @@ $menu-group-prefix-cls: '#{$css-prefix}menu-group';
   .#{$menu-item-prefix-cls}{
     cursor: pointer;
     height: 40px;
+    border-radius: 4px;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
     &:hover{
-      background-color: color.adjust($bee__blue, $alpha: -0.8);
+      background-color: color.adjust($bee__yellow, $alpha: -0.8);
+    }
+    &-active{
+      background-color: color.adjust($bee__yellow, $alpha: -0.8);
+    }
+    & + & {
+      margin-top: 4px;
     }
   }
   .#{$menu-group-prefix-cls} {
     .title{
+      padding-left: 16px;
       color: #c9c9c9;
       font-size: 14px;
+      margin-top: 8px;
+      margin-bottom: 4px;
     }
   }
 }

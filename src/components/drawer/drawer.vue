@@ -1,7 +1,9 @@
 <template>
 	<div :class="classes">
 		<div :class="[`${prefixCls}-mask`]"></div>
-		<div :class="[`${prefixCls}-drawer`]"></div>
+		<div :class="[`${prefixCls}-drawer`]">
+
+    </div>
 	</div>
 </template>
 

@@ -1,4 +1,4 @@
-# bee-ui
+# beeuty
 
 > A Vue.js project
 

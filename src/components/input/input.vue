@@ -1,5 +1,5 @@
 <template>
-	<div class="be__input">
+	<div class="bee__input">
 		<textarea
 			v-if="type === 'textarea'"
 			ref="input"
@@ -42,7 +42,7 @@ export default {
 			validate(value) {
 				return ['tiny', 'small', 'medium', 'large'].includes(value);
 			},
-			default: 'text',
+			default: 'medium',
 		},
 		suffix: String,
 		value: {
