@@ -81,12 +81,14 @@ import Tree from './views/Tree.vue';
 import Collapse from './views/Collapse.vue';
 import Menu from './views/Menu.vue';
 import Timeline from './views/Timeline.vue';
+import Count from './views/Count.vue';
 
 export default {
 	name: 'app',
 	components: {
 		Breadcrumb,
 		Collapse,
+		Count,
 		Alert,
 		Avatar,
 		Badge,
@@ -105,7 +107,7 @@ export default {
 	},
 	data() {
 		return {
-			currentComp: 'Timeline',
+			currentComp: 'Count',
 			navigation: {
 				currentIndex: 0,
 				list: [
@@ -131,6 +133,10 @@ export default {
 							{
 								title: '折叠面板',
 								symbol: 'Collapse',
+							},
+							{
+								title: '数字',
+								symbol: 'Count',
 							},
 							{
 								title: '分割线',
