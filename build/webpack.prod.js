@@ -14,7 +14,7 @@ module.exports = merge(webpackBaseConfig, {
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist/',
-    filename: 'beeuty.min.js',
+    filename: 'beeuty.js',
     library: 'beeuty',
     libraryTarget: 'umd',
     umdNamedDefine: true
